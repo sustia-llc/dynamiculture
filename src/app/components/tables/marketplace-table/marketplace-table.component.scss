@@ -1,0 +1,38 @@
+.full-width-table {
+  width: 100%;
+}
+
+.small-table{
+  overflow-x: scroll !important;
+}
+
+.positiveamt{
+  color: #b18efc;
+}
+
+.negativeamt{
+  color: rgb(181, 151, 38);
+}
+
+.td-center{
+  text-align: center;
+}
+
+.td-left{
+  text-align: left;
+}
+
+.td-right{
+  text-align: right;
+}
+
+.text-right .mat-sort-header-container {
+  justify-content: flex-end;
+}
+
+.circle-wrapper {
+  height: 30px;
+  circle: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}

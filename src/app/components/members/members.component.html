@@ -1,0 +1,10 @@
+<div class="grid-container">
+  <h1 class="mat-h1">DAO Membership</h1>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px"> <!--QUESTION ABOUT 350 or 200 here-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
+      <app-card title="Members" icon="people">
+        <app-members-table></app-members-table>
+      </app-card>
+    </mat-grid-tile> 
+  </mat-grid-list>
+</div>

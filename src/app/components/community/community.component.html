@@ -1,0 +1,30 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Community</h1>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <mat-grid-tile *ngFor="let mc of miniCardData" [colspan]="( cardLayout | async )?.miniCard.cols"
+    [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-mini-card [icon]="mc.icon" [title]="mc.title" [value]="mc.value" [color]="mc.color" [isIncrease]="mc.isIncrease" [isPositiveTrend]="mc.isPositiveTrend" duration="since last month" [percentValue]="mc.percentValue" [isCurrency]="mc. isCurrency"></app-mini-card>
+    </mat-grid-tile> 
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
+      <app-card title="Environmental Projects" icon="public">
+        <app-projects-table></app-projects-table>
+      </app-card>
+    </mat-grid-tile>   
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
+      <app-card title="Cultural Projects" icon="people">
+        <app-cultural-projects-table></app-cultural-projects-table>
+      </app-card>
+    </mat-grid-tile>       
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Solar/Wind Capacity (MW)" icon="wb_sunny">
+          <app-solar-capacity-chart></app-solar-capacity-chart>
+      </app-card>
+    </mat-grid-tile>
+    
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Waste" icon="sync_alt">
+          <app-waste-chart></app-waste-chart>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

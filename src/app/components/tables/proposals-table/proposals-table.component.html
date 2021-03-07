@@ -1,0 +1,73 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row" class="td-left">{{row.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row" class="td-left">{{row.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="notes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Notes</th>
+      <td mat-cell *matCellDef="let row" class="td-left">{{row.notes}}</td>
+    </ng-container>    
+
+    <ng-container matColumnDef="air">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="td-center">Air</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.air > 0 ? 'positiveamt' : 'negativeamt']">{{row.air}}</td>
+    </ng-container>    
+
+    <ng-container matColumnDef="biodiversity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Biodiversity</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.animals > 0 ? 'positiveamt' : 'negativeamt']">{{row.biodiversity}}</td>
+    </ng-container>    
+
+    <ng-container matColumnDef="carbon">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Carbon</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.carbon > 0 ? 'positiveamt' : 'negativeamt']">{{row.carbon}}</td>
+    </ng-container>    
+
+    <ng-container matColumnDef="culture">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Culture</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.animals > 0 ? 'positiveamt' : 'negativeamt']">{{row.culture}}</td>
+    </ng-container>       
+
+    <ng-container matColumnDef="foodsecurity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Food Security</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.animals > 0 ? 'positiveamt' : 'negativeamt']">{{row.foodsecurity}}</td>
+    </ng-container>          
+    
+    <ng-container matColumnDef="plants">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Plants</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.plants > 0 ? 'positiveamt' : 'negativeamt']">{{row.plants}}</td>
+    </ng-container>     
+    
+    <ng-container matColumnDef="soil">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Soil</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.soil > 0 ? 'positiveamt' : 'negativeamt']">{{row.soil}}</td>
+    </ng-container>      
+    
+    <ng-container matColumnDef="water">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Water</th>
+      <td mat-cell *matCellDef="let row" class="td-left" [ngClass]="[row.water > 0 ? 'positiveamt' : 'negativeamt']">{{row.water}}</td>
+    </ng-container>        
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row" class="td-left">{{row.status}}</td>
+    </ng-container>    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

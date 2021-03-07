@@ -1,0 +1,29 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+}
+
+.circle-wrapper {
+  height: 30px;
+  circle: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+

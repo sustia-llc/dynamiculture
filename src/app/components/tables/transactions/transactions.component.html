@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8 small-table">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-right"> Date</th>
+      <td mat-cell class="td-left" *matCellDef="let row">{{row.date | date  : 'MM-dd-yyyy'}}</td>
+    </ng-container>  
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell class="td-left" *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Amount Column -->
+    <ng-container matColumnDef="amt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+      <td mat-cell class="td-right" *matCellDef="let row"  [ngClass]="[row.amt > 0 ? 'positiveamt' : 'negativeamt']">{{row.amt}} {{row.currency}}</td>
+    </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

@@ -1,0 +1,31 @@
+.full-width-table {
+  width: 100%;
+}
+
+.small-table{
+  overflow-x: scroll !important;
+}
+
+.positiveamt{
+  color: #b18efc;
+}
+
+.negativeamt{
+  color: #ffe680;
+}
+
+.td-center{
+  text-align: center;
+}
+
+.td-left{
+  text-align: left;
+}
+
+.td-right{
+  text-align: right;
+}
+
+.text-right .mat-sort-header-container {
+  justify-content: flex-end;
+}
