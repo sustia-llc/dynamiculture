@@ -1,6 +1,6 @@
-<div class="grid-container">
+<div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">My Dashboard</h1>
-  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px"> <!--QUESTION ABOUT 350 or 200 here-->
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px"> <!--QUESTION ABOUT 350 or 200 here-->
     <mat-grid-tile *ngFor="let mc of miniCardData" [colspan]="( cardLayout | async )?.miniCard.cols"
     [rowspan]="( cardLayout | async )?.miniCard.rows">
       <app-mini-card [icon]="mc.icon" [title]="mc.title" [value]="mc.value" [color]="mc.color" [isIncrease]="mc.isIncrease" [isPositiveTrend]="mc.isPositiveTrend" duration="since last month" [percentValue]="mc.percentValue" [isCurrency]="mc. isCurrency"></app-mini-card>
@@ -10,7 +10,7 @@
           <app-annual-income-chart></app-annual-income-chart>
       </app-card>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="2">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
       <app-card title="Latest Transactions" icon="fact_check">
         <app-transactions></app-transactions>
       </app-card>
@@ -20,7 +20,7 @@
           <app-coin-allocation-chart></app-coin-allocation-chart>
       </app-card>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="2">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
       <app-card title="Reminders" icon="done">
         <app-reminders></app-reminders>
       </app-card>

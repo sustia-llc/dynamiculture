@@ -1,6 +1,6 @@
-<div class="grid-container">
+<div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">Proposals</h1>
-  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px">
     <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
       <app-card title="Latest" icon="text_snippet">
         <app-proposals-table></app-proposals-table>
