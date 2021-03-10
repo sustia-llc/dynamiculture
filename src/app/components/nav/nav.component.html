@@ -6,10 +6,18 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/home'">Home</a>
+    </mat-nav-list>
+
+    <p><br/></p>
+    <mat-divider></mat-divider>
+
+    <mat-toolbar>Demo - Béeso'</mat-toolbar>
+
+    <mat-nav-list>
       <a mat-list-item [routerLink]="'/community'">Community</a>
       <a *ngFor="let item of communityMenuItems" mat-list-item [routerLink]="'/'+item.link">&nbsp;&nbsp;&nbsp; {{item.text}} </a>
     </mat-nav-list>
-    <mat-divider></mat-divider>
+    
     <mat-nav-list>
       <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{item | titlecase}} </a>
     </mat-nav-list>
@@ -25,7 +33,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Dynamiculture - Béeso'</span>
+      <span>Dynamiculture</span>
       <span class="flexExpand"></span>
       <div>
         <span><img class="circle-wrapper" src="/assets/artist1.jpg"></span>
