@@ -1,7 +1,10 @@
 <div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">Culture</h1>
-  <div> TODO: Language Revitalization, Recording songs and stories</div>
-  <mat-grid-list cols="2" rowHeight="350px">
-
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px">  
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table.cols" [rowspan]="( cardLayout | async )?.table.rows">
+      <app-card title="Cultural Projects" icon="people">
+        <app-cultural-projects-table></app-cultural-projects-table>
+      </app-card>
+    </mat-grid-tile>       
   </mat-grid-list>
 </div>

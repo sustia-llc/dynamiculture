@@ -1,6 +1,11 @@
 <div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">Biodiversity</h1>
-  <div> TODO: Bee counts, Satellite tree counts, Endangered Species counts, Light pollution</div>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <div> TODO: Satellite tree counts, Light pollution</div>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Endangered Species by Year" icon="sync_alt">
+          <app-endangered-species-chart></app-endangered-species-chart>
+      </app-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

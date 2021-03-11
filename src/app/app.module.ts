@@ -56,6 +56,9 @@ import { CultureComponent } from './components/culture/culture.component';
 import { CulturalProjectsTableComponent } from './components/tables/cultural-projects-table/cultural-projects-table.component';
 import { FoodsecurityComponent } from './components/foodsecurity/foodsecurity.component';
 import { HomeComponent } from './components/home/home.component';
+import { AirQualityChartComponent } from './components/charts/air-quality-chart/air-quality-chart.component';
+import { BeeCountChartComponent } from './components/charts/bee-count-chart/bee-count-chart.component';
+import { EndangeredSpeciesChartComponent } from './components/charts/endangered-species-chart/endangered-species-chart.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +95,10 @@ import { HomeComponent } from './components/home/home.component';
     CultureComponent,
     CulturalProjectsTableComponent,
     FoodsecurityComponent,
-    HomeComponent
+    HomeComponent,
+    AirQualityChartComponent,
+    BeeCountChartComponent,
+    EndangeredSpeciesChartComponent
   ],
   imports: [
     BrowserModule,

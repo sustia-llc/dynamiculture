@@ -1,7 +1,11 @@
 <div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">Food Security</h1>
-  <div> TODO: Seed Banks, Bee Health</div>
-  <mat-grid-list cols="2" rowHeight="350px">
-
+  <div> TODO: Seed Banks</div>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Yearly Count Bee Hives" icon="analytics">
+          <app-bee-count-chart></app-bee-count-chart>
+      </app-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

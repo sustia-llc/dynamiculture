@@ -1,6 +1,11 @@
 <div class="grid-container" style="max-width: 1200px;">
   <h1 class="mat-h1">Soil</h1>
-  <div> TODO: Micro and Macro organisms, Satellite Erosion, Mulching, Composting, Recycling</div>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <div> TODO: Micro and Macro organisms, Satellite Erosion, Mulching</div>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="235px">
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Waste by Month" icon="sync_alt">
+          <app-waste-chart></app-waste-chart>
+      </app-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

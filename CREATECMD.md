@@ -244,7 +244,7 @@ cardLayout = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
          columns: 1,
          miniCard: { cols: 1, rows: 1 },
          chart: { cols: 1, rows: 2 },
-         table: { cols: 1, rows: 4 },
+         table: { cols: 1, rows: 2 },
        };
      }
 
@@ -252,7 +252,7 @@ cardLayout = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
        columns: 4,
        miniCard: { cols: 1, rows: 1 },
        chart: { cols: 2, rows: 2 },
-       table: { cols: 4, rows: 4 },
+       table: { cols: 2, rows: 2 },
      };
    })
  );
@@ -282,10 +282,10 @@ cardLayout = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
 
 generate charts
 ```
-ng generate ng2-charts-schematics:radar charts/income-source-coin-chart
-ng generate ng2-charts-schematics:pie charts/coin-allocation-chart
-ng generate ng2-charts-schematics:line charts/annual-income-chart
-ng generate ng2-charts-schematics:bar charts/income-source-chart
+ng generate ng2-charts-schematics:radar components/charts/income-source-coin-chart
+ng generate ng2-charts-schematics:pie components/charts/coin-allocation-chart
+ng generate ng2-charts-schematics:line components/charts/annual-income-chart
+ng generate ng2-charts-schematics:bar components/charts/income-source-chart
 ```
 
 add `class="chartContainer"` top-level div in *-chart.component.html and remove display block
