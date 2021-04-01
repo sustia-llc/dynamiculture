@@ -1,8 +1,13 @@
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: #c397de;
 }
 
-.home.is-fullheight {
+.ofcv.is-fullheight {
     min-height: 100vh;
 }
 
@@ -55,7 +60,7 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.homepage-promo {
+.ofcvpage-promo {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -89,14 +94,14 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.homepage-row {
+.ofcvpage-row {
   width: 75%;
   display: flex;
   flex-direction: row;
   margin: $margin-promotion-sections 0;
 }
 
-.homepage-row-column {
+.ofcvpage-row-column {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -130,7 +135,7 @@ $margin-promotion-sections-small: 15px;
     flex-direction: column;
   }
 
-  .homepage-row-column {
+  .ofcvpage-row-column {
     width: 100%;
   }
 }
@@ -144,7 +149,7 @@ $margin-promotion-sections-small: 15px;
     margin: $margin-promotion-sections-small 0 0 0;
   }
 
-  .homepage-row, .homepage-carousel-row {
+  .ofcvpage-row, .ofcvpage-carousel-row {
     margin: $margin-promotion-sections-small 0;
   }
 }

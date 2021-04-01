@@ -1,0 +1,132 @@
+<header focusOnNavigation class="header-background"
+    aria-label="Get started" id="header">
+    <div class="header-section">
+        <div class="header-headline">
+            <h1 class="mat-h1">Dynamiculture Conviction Voting</h1>
+            <h2>Decision-making tool for Indigenous Environmental Projects</h2>
+        </div>
+    </div>
+</header>
+
+<main class="ofcvpage-promo">
+
+    <div class="ofcvpage-row">
+        <div>
+            <h2>Decision making on the Blockchain</h2>
+            <p>
+                In this <a href="https://youtu.be/I60y8daXseY?t=1891">MoneyLab Berlin talk</a>,
+                Ruth Catlow, co-founder of <a href="https://www.furtherfield.org/">Futherfield</a>, mentions
+                that most DAO (Decentralized Autonomous Organization) decisions are 
+                made off-chain and then ratified using the DAO structure. In her opinion, the DAO voting
+                mechanism need to capture more information about how decisions are being made.
+                The voting needs a more "transparent map-of-power".
+            </p>
+            <p>
+                Several groups have experimented with advanced forms of governance and
+                voting. <a href="https://gitcoin.co/wiki/grants/">Gitcoin Grants</a> was one of the first to experiment
+                with <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3243656">quadratic voting</a> to fund grants.
+                This design allows small donations from multiple individuals to generate a large amount of matching funds
+                during a funding round.
+            </p>
+            <p>
+                Token Engineering Commons and The Commons Stack have created several <em>on-chain</em> voting templates including:
+            </p>
+            <ul>
+                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/untitled">Dandelion Voting</a></li>
+                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/disputable-voting">Disputable Voting</a></li>
+                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/conviction-voting">Conviction Voting</a></li>
+            </ul>
+            <p>
+                and <em>off-chain</em> experiments in Token Log, Forum Voting, and Advice Process.
+            </p>
+            <p>
+                1Hive has built a toolset around conviction voting and modeling with cadCAD:
+            </p>
+            <ul>
+                <li><a href="https://github.com/1Hive/conviction-voting-cadcad">Aragon Conviction Voting</a></li>
+                <li><a href="https://1hive.org/#/home">1Hive DAO with Conviction Voting</a></li>
+            </ul>
+
+            <h2>Off-chain Conviction Voting Prototype</h2>
+            <p>
+                Conviction voting is very close to the voting mechanism we'd like to use for Dynamiculture. On-chain conviction
+                voting allows members to stake their organization's tokens on proposals. If the proposal has enough conviction for
+                the funding requested, it will pass.
+            </p>
+            <p>
+                Joel Thorstensson and Ceramic Network offered a GitCoin GR9 Hackathon Bounty to "Build a POC for off-chain conviction voting with Ceramic".
+                They put together a thorough <a href="https://blog.ceramic.network/trust-minimized-off-chain-conviction-voting/">design document,
+                "Trust minimized, off-chain conviction voting"</a> from which we built a prototype system.
+            </p>
+
+            <p>
+                It's off-chain, so decision making can happen <em>without</em> staking funds. Much of the proposal data is
+                held on Ceramic network's sidechain and anchored on the blockchain.
+            </p>
+            <h2>Prototype Diagram</h2>
+            <p>
+                <img class="img-fluid" src="../../../assets/cv_diagram.png" alt="Conviction Voting Diagram" >
+            </p>
+            <p>
+                Starting from the bottom of the diagram, the Blockchain hosts:
+            </p>
+            <ul>
+                <li>ERC20 contract for the organization</li>
+                <li>token holders as organization members</li>
+                <li>organization contract owner with the DAI funding pool</li>
+            </ul>
+            <p>
+                The Ceramic Network contains:
+            </p>
+            <ul>
+                <li>schemas controlled by the Snapshot Service user</li>
+                <li>a single conviction state document controlled by the snapshot service user</li>
+                <li>the member proposals controlled by members that create them</li>
+                <li>Ceramic IDX maps a single user conviction document to each Member</li>
+            </ul>
+            <p>
+                The Graph determines the token holders' ethereum addresses for the snapshot service. The Bootstrap script
+                is run once to set up the schemas and initial conviction state document. The Snapshot service runs
+                regularly to update the Conviction State Document based on the member's convictions. The dapp authenticates
+                to Ceramic using the member's wallet and allows the members to create proposals and update their conviction documents.
+            
+                <a href="https://github.com/Dynamiculture/offchain-cv-dapp">Source code on Github</a>
+            </p>
+
+            <h2>Future Plans</h2>
+            <p>
+                Expand the prototype to support multiple types of tokens within an organization:
+            </p>
+            <ul>
+                <li>Air Tokens</li>
+                <li>Biodiversity Tokens</li>
+                <li>Carbon Tokens</li>
+                <li>Culture Tokens</li>
+                <li>Food Security Tokens</li>
+                <li>Affordable Housing Tokens</li>
+                <li>Soil Tokens</li>
+                <li>Water Tokens</li>
+            </ul>
+            <p>                
+                A member who has expertise in Water would have more water tokens than other members. Additionally,
+                performing services for the community like building a
+                water harvesting project or maintaining the water dashboard for the community allows the member
+                to augment their Water token holdings. 
+            </p>
+            <p>
+                Finally, Conviction Voting would allow the water expert to assert greater influence when reviewing proposals
+                that effect water resources in the community.
+            </p>
+
+            <h2>Related Projects</h2>
+            <ul>
+                <li><a href="https://disco.coop/governance-model/">DicCO Gov. Model</a></li>
+                <li><a href="https://we-make-money-not-art.com/black-swan-dao-can-blockchain-democratise-arts-commissioning/">Black Swan - Quadratic Voting, Emoji Voting, Lottery Veto</a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+
+
+

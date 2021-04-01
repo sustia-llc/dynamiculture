@@ -59,6 +59,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AirQualityChartComponent } from './components/charts/air-quality-chart/air-quality-chart.component';
 import { BeeCountChartComponent } from './components/charts/bee-count-chart/bee-count-chart.component';
 import { EndangeredSpeciesChartComponent } from './components/charts/endangered-species-chart/endangered-species-chart.component';
+import { OfcvComponent } from './components/ofcv/ofcv.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { EndangeredSpeciesChartComponent } from './components/charts/endangered-
     HomeComponent,
     AirQualityChartComponent,
     BeeCountChartComponent,
-    EndangeredSpeciesChartComponent
+    EndangeredSpeciesChartComponent,
+    OfcvComponent
   ],
   imports: [
     BrowserModule,

@@ -14,10 +14,12 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { CultureComponent } from './components/culture/culture.component';
 import { FoodsecurityComponent } from './components/foodsecurity/foodsecurity.component';
 import { HomeComponent } from './components/home/home.component';
+import { OfcvComponent } from './components/ofcv/ofcv.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
+  { path: 'ofcv', component: OfcvComponent},
   { path: 'community', component: CommunityComponent},
   { path: 'air', component: AirComponent },
   { path: 'biodiversity', component: BiodiversityComponent },
