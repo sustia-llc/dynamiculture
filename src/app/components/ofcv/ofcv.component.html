@@ -12,44 +12,57 @@
 
     <div class="ofcvpage-row">
         <div>
-            <h2>Decision making on the Blockchain</h2>
             <p>
                 <img class="img-fluid" src="../../../assets/doge-dao.png" alt="Doge Dao Off-chain Voting Diagram" ><br>
                 Credit to Joel Thorstensson
             </p>
+            <h2>Existing Decision-making Tools</h2>
             <p>
-                In this <a href="https://youtu.be/I60y8daXseY?t=1891">MoneyLab Berlin talk</a>,
-                Ruth Catlow, co-founder of <a href="https://www.furtherfield.org/">Futherfield</a>, mentions
-                that most DAO (Decentralized Autonomous Organization) decisions are 
+                In this <a href="https://youtu.be/I60y8daXseY?t=1891">MoneyLab Berlin talk [youtube.com]</a>,
+                Ruth Catlow, co-founder of <a href="https://www.furtherfield.org/">Futherfield [furtherfield.org]</a>, 
+                has found that most DAO (Decentralized Autonomous Organization) decisions are 
                 made off-chain and then ratified using the DAO structure. In her opinion, the DAO voting
-                mechanism need to capture more information about how decisions are being made.
+                mechanism needs to capture more information about how decisions are being made.
                 The voting needs a more "transparent map-of-power".
             </p>
             <p>
                 Several groups have experimented with advanced forms of governance and
-                voting. <a href="https://gitcoin.co/wiki/grants/">Gitcoin Grants</a> was one of the first to experiment
-                with <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3243656">quadratic voting</a> to fund grants.
+                voting.
+            </p>
+            <p>
+                <em>Quadratic Voting</em>: <a href="https://gitcoin.co/wiki/grants/">Gitcoin Grants [gitcoin.co]</a> was one of the first to experiment
+                with quadratic voting as defined in <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3243656">"Liberal Radicalism: A Flexible Design
+                For Philanthropic Matching Funds" [ssrn.com]</a> (Buterin et al, 2018) to fund grants.
                 This design allows small donations from multiple individuals to generate a large amount of matching funds
                 during a funding round.
             </p>
+            
             <p>
-                Token Engineering Commons and The Commons Stack have created several <em>on-chain</em> voting templates including:
+                <em>Dandelion Voting</em>: On-chain voting mechanism where voting power is based on the number of tokens held by the voter,
+                also known as token-weighted voting. See more from 
+                <a href="https://token-engineering-commons.gitbook.io/tec-handbook/untitled">Token Engineering Commons [gitbook.io]</a>,
+                <a href="https://blog.1hive.org/getting-started-with-dandelion-organizations/">1Hive Dandelion Organization [1hive.org]</a>, and the
+                <a href="https://github.com/1Hive/dandelion-voting-app">1Hive repo [github.com]</a>.
             </p>
-            <ul>
-                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/untitled">Dandelion Voting</a></li>
-                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/disputable-voting">Disputable Voting</a></li>
-                <li><a href="https://token-engineering-commons.gitbook.io/tec-handbook/conviction-voting">Conviction Voting</a></li>
-            </ul>
+            
             <p>
-                and <em>off-chain</em> experiments in Token Log, Forum Voting, and Advice Process.
+                <em>Disputable Voting</em>: On-chain voting mechanism that includes delegating votes and a mechanism for disputing proposals.
+                See more from 
+                <a href="https://token-engineering-commons.gitbook.io/tec-handbook/disputable-voting">Token Engineering Commons [gitbook.io]</a> and the
+                <a href="https://github.com/aragon/aragon-apps/tree/master/apps/voting-disputable">Aragon repo [github.com]</a>.
             </p>
+            
             <p>
-                1Hive has built a toolset around conviction voting and modeling with cadCAD:
+                <em>Conviction Voting</em>: On-chain voting mechanism that allows users to assert preferences for a proposal on a continuous
+                basis. Conviction to a proposal is calculated on the length of time a voter has kept their preference for a particular proposal. See more from 
+                <a href="https://token-engineering-commons.gitbook.io/tec-handbook/conviction-voting">Token Engineering Commons [gitbook.io]</a>,
+                <a href="https://github.com/1Hive/conviction-voting-cadcad">Aragon Conviction Voting repo [github.com]</a>,
+                and <a href="https://1hive.org/#/home">1Hive DAO with Conviction Voting [1hive.org]</a>.
             </p>
-            <ul>
-                <li><a href="https://github.com/1Hive/conviction-voting-cadcad">Aragon Conviction Voting</a></li>
-                <li><a href="https://1hive.org/#/home">1Hive DAO with Conviction Voting</a></li>
-            </ul>
+            
+            <p>
+                <em>Off-chain Voting</em>: Includes Token Log, Emoji Voting, Forum Voting, and Advice Process.
+            </p>
 
             <h2>Off-chain Conviction Voting Prototype</h2>
             <p>
@@ -58,21 +71,23 @@
                 the funding requested, it will pass.
             </p>
             <p>
-                Joel Thorstensson and Ceramic Network offered a GitCoin GR9 Hackathon Bounty to "Build a POC for off-chain conviction voting with Ceramic".
-                They put together a thorough <a href="https://blog.ceramic.network/trust-minimized-off-chain-conviction-voting/">design document,
-                "Trust minimized, off-chain conviction voting"</a> from which we built a prototype system.
+                Joel Thorstensson and <a href="https://ceramic.network/">Ceramic Network [ceramic.network]</a> offered a GitCoin GR9 Hackathon Bounty to "Build a POC for off-chain conviction voting with Ceramic".
+                They put together a thorough design document, <a href="https://blog.ceramic.network/trust-minimized-off-chain-conviction-voting/">
+                "Trust minimized, off-chain conviction voting" [ceramic.network]</a> (2021) from which we built a prototype system.
             </p>
 
             <p>
                 It's off-chain, so decision making can happen <em>without</em> staking funds. Much of the proposal data is
-                held on Ceramic network's sidechain and anchored on the blockchain.
+                held on Ceramic network's sidechain and anchored on the blockchain. By storing some data off-chain, 
+                the organization is not limited by blockchain gas fees and can collect more information about the proposal
+                using verifiable data structures managed by Ceramic and IDX.
             </p>
             <h2>Prototype Diagram</h2>
             <p>
                 <img class="img-fluid" src="../../../assets/cv_diagram.png" alt="Conviction Voting Diagram" >
             </p>
             <p>
-                Starting from the bottom of the diagram, the Blockchain hosts:
+                Starting from the bottom of the diagram, the blockchain hosts:
             </p>
             <ul>
                 <li>ERC20 contract for the organization</li>
@@ -83,23 +98,28 @@
                 The Ceramic Network contains:
             </p>
             <ul>
-                <li>schemas controlled by the Snapshot Service user</li>
+                <li>schemas controlled by the snapshot service user</li>
                 <li>a single conviction state document controlled by the snapshot service user</li>
-                <li>the member proposals controlled by members that create them</li>
-                <li>Ceramic IDX maps a single user conviction document to each Member</li>
+                <li>member proposals controlled by members that create them</li>
+                <li>user conviction documents mapped to each member using IDX</li>
             </ul>
             <p>
-                The Graph determines the token holders' ethereum addresses for the snapshot service. The Bootstrap script
-                is run once to set up the schemas and initial conviction state document. The Snapshot service runs
-                regularly to update the Conviction State Document based on the member's convictions. The dapp authenticates
+                <a href="https://thegraph.com/">The Graph [thegraph.com]</a> determines the token holders' ethereum addresses for the snapshot service. The bootstrap script
+                is run once to set up the schemas and initial conviction state document. The snapshot service runs
+                regularly to update the conviction state document based on the member's convictions. Our dapp authenticates
                 to Ceramic using the member's wallet and allows the members to create proposals and update their conviction documents.
-            
-                <a href="https://github.com/Dynamiculture/offchain-cv-dapp">Source code on Github</a>
+            </p>
+            <h2>dapp User Interface</h2>
+            <p>
+                <img class="img-fluid" src="../../../assets/cv_dapp.png" alt="Conviction Voting UI" >
+            </p>
+            <p>
+                <a href="https://github.com/Dynamiculture/offchain-cv-dapp">Source code [github.com]</a>
             </p>
 
             <h2>Future Plans</h2>
             <p>
-                Expand the prototype to support multiple types of tokens within an organization:
+                Later this year we hope to expand the prototype to support multiple types of tokens within an organization:
             </p>
             <ul>
                 <li>Air Tokens</li>
@@ -112,14 +132,14 @@
                 <li>Water Tokens</li>
             </ul>
             <p>                
-                A member who has expertise in Water would have more water tokens than other members. Additionally,
+                A member who has expertise in water management would have more water tokens than other members. Additionally,
                 performing services for the community like building a
                 water harvesting project or maintaining the water dashboard for the community allows the member
-                to augment their Water token holdings. 
+                to augment their water token holdings. We'd like to also implement a mechanism for losing tokens similar to "reputation decay"
+                as defined by <a href="https://colony.io/whitepaper.pdf">colony.io whitepaper (PDF)</a>.
             </p>
             <p>
-                Finally, Conviction Voting would allow the water expert to assert greater influence when reviewing proposals
-                that effect water resources in the community.
+                Conviction voting would allow members with reputation to have commensurate influence when reviewing proposals that affect resources in the community.
             </p>
 
             <h2>Related Projects</h2>
